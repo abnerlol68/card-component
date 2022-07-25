@@ -1,0 +1,136 @@
+@use 'normalize';
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$dark_cyan: hsl(185, 75%, 39%);
+$very_dark_desaturated_blue: hsl(229, 23%, 23%);
+$dark_grayish_blue: hsl(227, 10%, 46%);
+$dark_gray: hsl(0, 0%, 59%);
+
+body {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $dark_cyan;
+  font-family: 'Kumbh Sans', sans-serif;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1.2rem;
+    background: #fff;
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+
+      .age {
+        color: $dark_grayish_blue;
+        margin-left: 0.5rem;
+        font-weight: 400;
+      }
+    }
+
+    h2 {
+      color: $dark_grayish_blue;
+      font-weight: 400;
+      font-size: 17px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.pattern {
+  z-index: -1;
+  position: absolute;
+  pointer-events: none;
+}
+
+.pattern-top {
+  top: -490px;
+  left: -220px;
+}
+
+.pattern-bottom {
+  bottom: -490px;
+  right: -220px;
+}
+
+.pattern-card {
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.image-profile {
+  position: relative;
+  top: -40px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin: -1rem;
+}
+
+.statistics {
+  width: 100%;
+  padding: 1.8rem 0;
+  margin-top: 1.8rem;
+  box-shadow: #e7e7e7 0 1px 0 0 inset;
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  justify-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      letter-spacing: 1px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    h3 {
+      color: $dark_grayish_blue;
+      letter-spacing: 1px;
+      font-size: 12px;
+      font-weight: 400;
+      margin: 0.5rem 0 0 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .pattern-top {
+    left: -420px;
+  }
+  
+  .pattern-bottom {
+    right: -420px;
+  }
+}
+
+@media only screen and (max-width: 600px)  {
+  .pattern-top {
+    top: -640px;
+    left: -620px;
+  }
+  
+  .pattern-bottom {
+    bottom: -640px;
+    right: -620px;
+  }
+}
+
+@media only screen and (max-width: 390px)  {
+  main {
+    width: 290px;
+  }
+
+  .pattern-card {
+    width: inherit;
+  }
+}
